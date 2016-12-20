@@ -190,7 +190,6 @@ end
 end
 
 function helper.draw()
-	helper.track(1)
 	helper.drawObjects()
 	helper.drawHitboxes()
 	helper.feedback()
@@ -205,5 +204,11 @@ end
 function helper.get(objectID)
 
 	return objectArray[objectID]
+
+end
+
+function helper.checkCollision(object1,object2)
+
+	
 
 end
