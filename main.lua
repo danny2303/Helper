@@ -3,11 +3,8 @@ require "helper"
 function love.load()
 	angle = 0
 helper.load(true)
---helper.newObject("image",100,100,100,100,love.graphics.newImage("tree.png"),0)
---helper.newObject("rectangle",500,100,100,100,love.graphics.newImage("tree.png"),0)
 
---helper.movement(2,"accelerate",3,1,1)
---helper.movement(1,"rotationalVelocity",0.25,1,10)
+helper.newObject("rectangle",300,300,71,101,love.graphics.newImage("tree.png"),0)
 
 helper.newObject("image",300,300,71,101,love.graphics.newImage("tree.png"),0)
 --helper.newObject("rectangle",300,300,71,101,love.graphics.newImage("tree.png"),0)
@@ -33,7 +30,11 @@ helper.update()
 end
 
 function love.draw()
+<<<<<<< HEAD
 helper.track(2)
+=======
+helper.track(1)
+>>>>>>> origin/master
 love.graphics.print(helper.get(1)[2],100,1)
 
 helper.draw()

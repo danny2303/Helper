@@ -206,3 +206,9 @@ function helper.get(objectID)
 	return objectArray[objectID]
 
 end
+
+function helper.checkCollision(object1,object2)
+
+	
+
+end
