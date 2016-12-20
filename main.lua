@@ -30,11 +30,8 @@ helper.update()
 end
 
 function love.draw()
-<<<<<<< HEAD
-helper.track(2)
-=======
+	
 helper.track(1)
->>>>>>> origin/master
 love.graphics.print(helper.get(1)[2],100,1)
 
 helper.draw()
