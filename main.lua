@@ -11,14 +11,16 @@ helper.load(true)
 
 helper.newObject("image",300,300,71,101,love.graphics.newImage("tree.png"),0)
 --helper.newObject("rectangle",300,300,71,101,love.graphics.newImage("tree.png"),0)
-helper.movement(1,"rotationalVelocity",0,0,5)
+
 
 helper.newObject("image",500,450,71,101,love.graphics.newImage("tree.png"),0)
 --helper.newObject("rectangle",500,450,71,101,love.graphics.newImage("tree.png"),0)
-helper.movement(2,"rotationalVelocity",0,0,5)
 
 helper.newObject("image",1,1,89,200,love.graphics.newImage("tree.png"),0)
 --helper.newObject("rectangle",1,1,89,200,love.graphics.newImage("tree.png"),0)
+
+helper.movement(1,"rotationalVelocity",0,0,5)
+helper.movement(2,"rotationalVelocity",0,0,5)
 helper.movement(3,"rotationalVelocity",0,0,5)
 end
 
@@ -31,6 +33,7 @@ helper.update()
 end
 
 function love.draw()
+helper.track(2)
 love.graphics.print(helper.get(1)[2],100,1)
 
 helper.draw()

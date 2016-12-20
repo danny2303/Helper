@@ -85,7 +85,7 @@ for i=1, objectNum do
 	love.graphics.rotate((objectArray[i][9]*math.pi)/180)
 	love.graphics.translate(-objectArray[i][2], -objectArray[i][3])
 	love.graphics.setColor(0xff, 0xff, 0xff)
-	love.graphics.rectangle('line', objectArray[i][2]-objectArray[i][4]/2, objectArray[i][3]-objectArray[i][5]/2, objectArray[i][4],objectArray[i][5])
+	love.graphics.rectangle('line', objectArray[i][2], objectArray[i][3], objectArray[i][4],objectArray[i][5])
 	love.graphics.pop()
 end
 
@@ -190,7 +190,6 @@ end
 end
 
 function helper.draw()
-	helper.track(1)
 	helper.drawObjects()
 	helper.drawHitboxes()
 	helper.feedback()
