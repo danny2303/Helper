@@ -22,4 +22,7 @@ helper.track(objectID) - displays the array for that object
 helper.rotate(objectID,degrees) - rotates an object by an amount of degrees(this makes hitboxes no longer accurate)(only with image type objects)
 		degrees - the amount of degrees (0-360) of rotation
 
-helper.get(objectID) - returns an array of all that object's variables USAGE : love.graphics.print(helper.get(1)[2],100,1) - prints object one's x position at 100,1	
+helper.get(objectID) - returns an array of all that object's variables USAGE : love.graphics.print(helper.get(1)[2],100,1) - prints object one's x position at 100,1
+
+helper.checkCollision(objectID,objectID) - returns true if the two objects are touching
+		objectID - the object IDs of the two objects you want to compare

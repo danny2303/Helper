@@ -13,6 +13,7 @@ function helper.load(doImageCropping)
 	selectedFeedback = feedbackNum
 	lineSpacing = 20
 	imageCropping = doImageCropping
+	airFriction = 0.001
 
 end
 
@@ -198,6 +199,7 @@ end
 function helper.update()
 
 	helper.applyVelocities()
+	helper.applyFriction()
 
 end
 
@@ -209,6 +211,42 @@ end
 
 function helper.checkCollision(object1,object2)
 
-	
+	if objectArray[object1][9] == 0 and objectArray[object2][9] == 0 then
+		if objectArray[object2][2] < objectArray[object1][2] + objectArray[object1][4] and objectArray[object2][2] > objectArray[object1][2] - objectArray[object2][4] then
+			if objectArray[object2][3] < objectArray[object1][3] + objectArray[object1][5] and objectArray[object2][3] > objectArray[object1][3] - objectArray[object2][5] then
+				return true
+			end
+		end
+	end
 
 end
+
+function helper.setAirFriction(friction)
+
+	airFriction = friction
+
+end
+
+function helper.applyFriction()
+
+	for i=1, objectNum do
+		if objectArray[i][7] ~= 0 then
+			if objectArray[i][7] > 0 then
+				objectArray[i][7] = objectArray[i][7] - airFriction
+			else
+				objectArray[i][7] = objectArray[i][7] + airFriction
+			end
+		end
+
+		if objectArray[i][8] ~= 0 then
+			if objectArray[i][8] > 0 then
+				objectArray[i][8] = objectArray[i][8] - airFriction
+			else
+				objectArray[i][8] = objectArray[i][8] + airFriction
+			end
+		end
+	end
+
+end
+
+	--airFriction, gravity,
